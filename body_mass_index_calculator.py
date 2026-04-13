@@ -1,9 +1,16 @@
-try:
-    height = float(input("Enter your height in metres:\n"))
-    weight = float(input("Enter your weight in kilograms:\n"))
-except ValueError:
-    print("Invalid input. Please enter numeric values.")
-    exit()
+def get_float(prompt):
+    while True:
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Value must be greater than 0. Try again.")
+            else:
+                return value
+        except ValueError:
+            print("Invalid input. Please enter a numeric value. Try again.")
+
+height = get_float("Enter your height in metres:\n")
+weight = get_float("Enter your weight in kilograms:\n")
 
 bmi = round(weight / height ** 2, 1)
 
