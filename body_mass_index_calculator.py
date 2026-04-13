@@ -1,5 +1,9 @@
-height = float(input("Enter your height in metres:\n"))
-weight = float(input("Enter your weight in kilograms:\n"))
+try:
+    height = float(input("Enter your height in metres:\n"))
+    weight = float(input("Enter your weight in kilograms:\n"))
+except ValueError:
+    print("Invalid input. Please enter numeric values.")
+    exit()
 
 bmi = round(weight / height ** 2, 1)
 
